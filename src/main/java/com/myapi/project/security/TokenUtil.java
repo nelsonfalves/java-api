@@ -1,6 +1,7 @@
 package com.myapi.project.security;
 
 import com.myapi.project.model.UserModel;
+import io.github.cdimascio.dotenv.Dotenv;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
@@ -17,11 +18,13 @@ import java.util.Date;
 
 public class TokenUtil {
 
+    static Dotenv dotenv = Dotenv.load();
+
     private static final String HEADER = "Authorization";
     private static final String PREFIX = "Bearer ";
     private static final long EXPIRATION = 12 * 60 * 60 * 1000; // 12 hours
-    private static final String SECRET_KEY = "MyK3Yt0T0k3nP4r@S3CuRiTY@Sp3c14L";   //SEGURANCA
-    private static final String EMISSOR = "nelsonalves";
+    private static final String SECRET_KEY = dotenv.get("SECRET_KEY_TOKEN");   //SEGURANCA
+    private static final String EMISSOR = dotenv.get("EMISSOR_TOKEN");
 
     public static String createToken(UserModel user) {
         Key secretKey = Keys.hmacShaKeyFor(SECRET_KEY.getBytes());

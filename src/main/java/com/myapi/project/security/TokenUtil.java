@@ -23,8 +23,8 @@ public class TokenUtil {
     private static final String HEADER = "Authorization";
     private static final String PREFIX = "Bearer ";
     private static final long EXPIRATION = 12 * 60 * 60 * 1000; // 12 hours
-    private static final String SECRET_KEY = dotenv.get("SECRET_KEY_TOKEN");   //SEGURANCA
-    private static final String EMISSOR = dotenv.get("EMISSOR_TOKEN");
+    private static final String SECRET_KEY = dotenv.get("JWT_SECRET_KEY");
+    private static final String EMISSOR = dotenv.get("JWT_ISSUER");
 
     public static String createToken(UserModel user) {
         Key secretKey = Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
@@ -48,7 +48,7 @@ public class TokenUtil {
     }
 
     private static boolean isSubjectValid(String username) {
-        return username != null && !username.isEmpty();
+        return !username.isEmpty();
     }
 
     public static Authentication validate(HttpServletRequest request) {

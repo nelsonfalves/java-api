@@ -1,0 +1,25 @@
+services:
+  app:
+    image: java_app
+    container_name: java_app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/user_db
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=root
+    volumes:
+      - ./.env:/app/.env
+
+  db:
+    image: mysql:8.0.30-debian
+    container_name: mysql-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: user_db
+    volumes:
+      - ./script.sql:/docker-entrypoint-initdb.d/script.sql

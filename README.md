@@ -42,13 +42,13 @@ Antes de conseguir utilizar o programa para excluir, atualizar e ver os cadastro
 }
 
 ```
-3. E outra requisição POST para ```http://localhost:8080/users/login``` (com o mesmo JSON acima)
+3. E uma requisição POST para ```http://localhost:8080/users/login``` (com o mesmo JSON acima)
 
-4. Será retornado um Token JET como esse: ```Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKb2huIERvZSIsImlzcyI6InRlc3RfaXNzdWVyIiwiZXhwIjoxNzIyNDEzMTg0fQ.MuEDcmH45kFa-dMGS70G4JTMp62EZshwY0MB5NvrtMk``` copie-o.
+4. Será retornado um Token JWT como esse: ```Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKb2huIERvZSIsImlzcyI6InRlc3RfaXNzdWVyIiwiZXhwIjoxNzIyNDEzMTg0fQ.MuEDcmH45kFa-dMGS70G4JTMp62EZshwY0MB5NvrtMk``` copie-o.
 
 5. Em seguida, faça um GET para ``http://localhost:8080/users```.
 
-6. Pronto! Agora que você esta autenticado, é possível realizar todas as operações livermente nas seguintes rotas:
+6. Pronto! Agora que você esta autenticado, é possível realizar todas as operações livremente nas seguintes rotas:
 
 #### Get All
 GET para ```http://localhost:8080/users```
@@ -60,7 +60,7 @@ GET para ```http://localhost:8080/users/{id}```
 DELETE para ```http://localhost:8080/users/{id}```
 
 #### Create
-POST para ```http://localhost:8080/users``` (junto  do Body seguindo o modelo citado na etapa 2)
+POST para ```http://localhost:8080/users``` (junto do Body seguindo o modelo citado na etapa 2)
 
 #### Update
 POST para ```http://localhost:8080/users``` (junto do Body atualizado do usuário)

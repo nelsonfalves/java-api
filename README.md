@@ -59,10 +59,10 @@ Antes de conseguir utilizar o programa para excluir, atualizar e ver os cadastro
 - GET para ```http://localhost:8080/users```
 
 #### Get by ID
-- GET para ```http://localhost:8080/users/{id}```
+- GET para ```http://localhost:8080/users/:id```
 
 #### Delete
-- DELETE para ```http://localhost:8080/users/{id}```
+- DELETE para ```http://localhost:8080/users/:id```
 
 #### Create
 - POST para ```http://localhost:8080/users``` (junto de um body seguindo o modelo citado na etapa 2)

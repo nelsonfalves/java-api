@@ -24,13 +24,18 @@ de segurança para proteger as informações dos usuários. Entre os diferenciai
 
 ## Instalação e Execução
 ### Passos Gerais
-Antes de conseguir utilizar o programa para excluir, atualizar e ver os cadastros do banco, é necessário se autenticar:
-
-1. No terminal, digite:
+1. Para criar a imagem Docker, digite no terminal:
+   
+       docker build -t java_app .
+   
+2. Em seguida, para subir os containers:
    
        docker compose up
+   
 
-2. Em seguida, utilizando uma ferramente como o Postman ou o Insomnia, ja é possivel fazer uma requisição POST para a URL ```http://localhost:8080/users```, com o seguinte Body JSON na requisição:
+Antes de conseguir utilizar o programa para excluir, atualizar e ver os cadastros do banco, é necessário se autenticar:
+
+3. Utilizando uma ferramente como o Postman ou o Insomnia, faça uma requisição POST para a URL ```http://localhost:8080/users```, com o seguinte body JSON na requisição:
    
 ```
 {
@@ -42,25 +47,25 @@ Antes de conseguir utilizar o programa para excluir, atualizar e ver os cadastro
 }
 
 ```
-3. E uma requisição POST para ```http://localhost:8080/users/login``` (com o mesmo JSON acima)
+4. E uma requisição POST para ```http://localhost:8080/users/login``` (com o mesmo JSON acima)
 
-4. Será retornado um Token JWT como esse: ```Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKb2huIERvZSIsImlzcyI6InRlc3RfaXNzdWVyIiwiZXhwIjoxNzIyNDEzMTg0fQ.MuEDcmH45kFa-dMGS70G4JTMp62EZshwY0MB5NvrtMk``` copie-o.
+5. Será retornado um Token JWT como esse: ```Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKb2huIERvZSIsImlzcyI6InRlc3RfaXNzdWVyIiwiZXhwIjoxNzIyNDEzMTg0fQ.MuEDcmH45kFa-dMGS70G4JTMp62EZshwY0MB5NvrtMk```, copie-o.
 
-5. Em seguida, faça um GET para ``http://localhost:8080/users```.
+6. Em seguida, faça um GET para ```http://localhost:8080/users```
 
-6. Pronto! Agora que você esta autenticado, é possível realizar todas as operações livremente nas seguintes rotas:
+7. Pronto! Agora que você esta autenticado, é possível realizar todas as operações livremente nas seguintes rotas:
 
 #### Get All
-GET para ```http://localhost:8080/users```
+- GET para ```http://localhost:8080/users```
 
 #### Get by ID
-GET para ```http://localhost:8080/users/{id}```
+- GET para ```http://localhost:8080/users/{id}```
 
 #### Delete
-DELETE para ```http://localhost:8080/users/{id}```
+- DELETE para ```http://localhost:8080/users/{id}```
 
 #### Create
-POST para ```http://localhost:8080/users``` (junto do Body seguindo o modelo citado na etapa 2)
+- POST para ```http://localhost:8080/users``` (junto de um body seguindo o modelo citado na etapa 2)
 
 #### Update
-POST para ```http://localhost:8080/users``` (junto do Body atualizado do usuário)
+- POST para ```http://localhost:8080/users``` (junto do Body atualizado do usuário)

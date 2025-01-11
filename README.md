@@ -1,15 +1,13 @@
 # Sistema de Reserva de Tickets
 
-## Descrição
-Este projeto é uma API desenvolvida com Java Spring Boot que se destaca pela robustez e segurança na gestão de dados. Além das operações básicas de criação, leitura, atualização e exclusão, o sistema implementa diversas práticas avançadas
-de segurança para proteger as informações dos usuários. Entre os diferenciais do projeto, destacam-se:
+## Description
+This project is an API built with Java Spring Boot, designed for secure and efficient data management. It supports CRUD operations and incorporates advanced security practices:
 
-- Criptografia de Senha: Todas as senhas são criptografadas utilizando algoritmos de hashing seguros, garantindo que as informações sensíveis não sejam armazenadas em texto simples.
-- Autenticação JWT: A API utiliza JSON Web Tokens (JWT) para autenticação, permitindo um sistema de login seguro e eficiente. Os tokens são gerados durante o login e devem ser incluídos em cada requisição subsequente para verificar a identidade
-  do usuário.
-- Middleware: O sistema implementa um middleware para filtrar requisições, tornando-o ainda mais seguro.
+- Password Encryption: Uses secure hashing algorithms for password protection.
+- JWT Authentication: Employs JSON Web Tokens for secure login sessions.
+- Middleware: Enhances request filtering for additional security.
 
-## Tecnologias Utilizadas
+## Technologies Used
 - Java
 - Java Spring Boot
 - Spring Security
